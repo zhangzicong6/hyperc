@@ -1,30 +1,9 @@
-var _paq = _paq || [];
-_paq.push(['trackEvent', 'Menu', 'weixinshare']);
-_paq.push(['trackEvent', 'Menu', 'tel']);
-_paq.push(['trackEvent', 'Menu', 'map']);
-_paq.push(['trackPageView']);
-_paq.push(['enableLinkTracking']);
-var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.iloushi.cn/";
-_paq.push(['setTrackerUrl', u+'piwik.php']);
-_paq.push(['setSiteId', 1]);
-var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-function clicktel(){
-    _paq.push(['setCustomVariable', 1, 'Menu', 'tel', 'page']);
-    _paq.push(['trackEvent', 'Menu', 'tel']);
-}
-function clickmap(){
-    _paq.push(['setCustomVariable', 2, 'Menu', 'map', 'page']);
-    _paq.push(['trackEvent', 'Menu', 'map']);
-}
-
-
 WeixinApi.ready(function(Api){ 
     var wxData = {
-        "imgUrl":'http://www.iloushi.cn/ued/yuanyanghuashu/img/wxlogo.jpg',
+        "imgUrl":'',
         "link": window.location.href,
-        "desc": '远洋华墅，国内首创精粹滨海度假独栋别墅，坐享盈滨半岛，稀缺景观资源，一线开阔外海，蜿蜒内部水系，17公里黄金沙滩。',
-        "title": '远洋华墅_尽瞰江山如此多娇'
+        "desc": '',
+        "title": ''
         };
 
     // 分享的回调
@@ -47,8 +26,6 @@ WeixinApi.ready(function(Api){
         },
         // 整个分享过程结束
         all:function (resp) {
-            _paq.push(['setCustomVariable', 3, 'Menu', 'weixinshare', 'page']);
-            _paq.push(['trackEvent', 'Menu', 'weixinshare']);
             // 如果你做的是一个鼓励用户进行分享的产品，在这里是不是可以给用户一些反馈了？
         }
     };
